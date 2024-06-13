@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0px;
+            margin: 0px;
+            width: 100%;
+            height: 1000px;
+        }
+
+        .title {
+            position: absolute;
+            top: 20px;
+            left: 45%;
+        }
+
+        .z {
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            left: 42%;
+            top: 20%;
+            display: grid;
+            grid-template-columns: 100px 100px 100px;
+        }
+
+        .s {
+            padding: 30px;
+            background-color: bisque;
+        }
+
+        .whoiswinner1 {
+            position: absolute;
+            top: 440px;
+            left: 45%;
+            font-size: 30px;
+            visibility: hidden;
+        }
+
+        .whoiswinner2 {
+            position: absolute;
+            top: 440px;
+            left: 45%;
+            font-size: 30px;
+            visibility: hidden;
+        }
+        .draw {
+            position: absolute;
+            top: 440px;
+            left: 740px;
+            font-size: 30px;
+            visibility: hidden;
+        }
+
+        .reset {
+            position: absolute;
+            top: 520px;
+            left: 48%;
+        }
+
+        .et {
+            padding: 20px 40px;
+            background-color: rgb(143, 46, 143);
+            border-radius: 30px;
+            color: white;
+            font-size: 16px;
+        }
+    </style>
+
+    <script>
+        var t = 1;
+
+        function winner() {
+var flag =0;
+            var j1 = document.getElementById("a1").value;
+            var j2 = document.getElementById("a2").value;
+            var j3 = document.getElementById("a3").value;
+            var j4 = document.getElementById("a4").value;
+            var j5 = document.getElementById("a5").value;
+            var j6 = document.getElementById("a6").value;
+            var j7 = document.getElementById("a7").value;
+            var j8 = document.getElementById("a8").value;
+            var j9 = document.getElementById("a9").value;
+            if (j1 == "X" && j2 == "X" && j3 == "X" || j4 == "X" && j5 == "X" && j6 == "X" || j7 == "X" && j8 == "X" && j9 == "X" || j1 == "X" && j4 == "X" && j7 == "X" || j2 == "X" && j5 == "X" && j8 == "X" || j3 == "X" && j6 == "X" && j9 == "X" || j1 == "X" && j5 == "X" && j9 == "X" || j3 == "X" && j5 == "X" && j7 == "X") {
+                // alert("Player-1 is winner");
+                document.getElementById("p1").style.visibility = "visible";
+              flag=1;
+            }
+            else if (j1 == "O" && j2 == "O" && j3 == "O" || j4 == "O" && j5 == "O" && j6 == "O" || j7 == "O" && j8 == "O" && j9 == "O" || j1 == "O" && j4 == "O" && j7 == "O" || j2 == "O" && j5 == "O" && j8 == "O" || j3 == "O" && j6 == "O" && j9 == "O" || j1 == "O" && j5 == "O" && j9 == "O" || j3 == "O" && j5 == "O" && j7 == "O") { 
+            // alert("Player-2 is winner");
+            document.getElementById("p2").style.visibility = "visible";
+            flag=1;
+            }
+            else if (j1.length == 1 && j2.length == 1 && j3.length == 1 && j4.length == 1 && j5.length == 1 && j6.length == 1 && j7.length == 1 && j8.length == 1 && j9.length == 1) {
+                // draw
+            document.getElementById("p3").style.visibility = "visible";
+        }
+        else if(flag==1) {
+            
+        }
+        
+        }
+        function reset() {
+            document.getElementById("a1").value = "";
+            document.getElementById("a2").value = "";
+            document.getElementById("a3").value = "";
+            document.getElementById("a4").value = "";
+            document.getElementById("a5").value = "";
+            document.getElementById("a6").value = "";
+            document.getElementById("a7").value = "";
+            document.getElementById("a8").value = "";
+            document.getElementById("a9").value = "";
+            t = 1;
+            document.getElementById("p1").style.visibility = "hidden";
+            document.getElementById("p2").style.visibility = "hidden";
+            document.getElementById("p3").style.visibility = "hidden";
+        }
+
+        function b1() {
+
+            if (document.getElementById("a1").value.length == 0) {
+                if (t % 2 == 1) {
+                    document.getElementById("a1").value = "X"
+                }
+                else {
+                    document.getElementById("a1").value = "O"
+                }
+                t = t + 1;
+                winner();
+            }
+        }
+        function b2() {
+            if (document.getElementById("a2").value.length == 0) {
+                if (t % 2 == 1) {
+                    document.getElementById("a2").value = "X"
+                }
+                else {
+                    document.getElementById("a2").value = "O"
+                }
+                t = t + 1;
+                winner();
+            }
+        }
+        function b3() {
+            if (document.getElementById("a3").value.length == 0) {
+                if (t % 2 == 1) {
+                    document.getElementById("a3").value = "X"
+                }
+                else {
+                    document.getElementById("a3").value = "O"
+                }
+                t = t + 1;
+                winner();
+            }
+        }
+        function b4() {
+            if (document.getElementById("a4").value.length == 0) {
+                if (t % 2 == 1) {
+                    document.getElementById("a4").value = "X"
+                }
+                else {
+                    document.getElementById("a4").value = "O"
+                }
+                t = t + 1;
+                winner();
+            }
+        }
+
+        function b5() {
+            if (document.getElementById("a5").value.length == 0) {
+                if (t % 2 == 1) {
+                    document.getElementById("a5").value = "X"
+                }
+                else {
+                    document.getElementById("a5").value = "O"
+                }
+                t = t + 1;
+                winner();
+            }
+        }
+        function b6() {
+            if (document.getElementById("a6").value.length == 0) {
+                if (t % 2 == 1) {
+                    document.getElementById("a6").value = "X"
+                }
+                else {
+                    document.getElementById("a6").value = "O"
+                }
+                t = t + 1;
+                winner();
+            }
+        }
+        function b7() {
+            if (document.getElementById("a7").value.length == 0) {
+                if (t % 2 == 1) {
+                    document.getElementById("a7").value = "X"
+                }
+                else {
+                    document.getElementById("a7").value = "O"
+                }
+                t = t + 1;
+                winner();
+            }
+        }
+        function b8() {
+            if (document.getElementById("a8").value.length == 0) {
+                if (t % 2 == 1) {
+                    document.getElementById("a8").value = "X"
+                }
+                else {
+                    document.getElementById("a8").value = "O"
+                }
+                t = t + 1;
+                winner();
+            }
+        }
+        function b9() {
+            if (document.getElementById("a9").value.length == 0) {
+                if (t % 2 == 1) {
+                    document.getElementById("a9").value = "X"
+                }
+                else {
+                    document.getElementById("a9").value = "O";
+                }
+                t = t + 1;
+                winner();
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="title">
+        <h1>TIC-TAC-TOE</h1>
+    </div>
+    <div class="z">
+
+        <input type="button" value="" id="a1" onclick="b1()" class="s">
+        <input type="button" value="" id="a2" onclick="b2()" class="s">
+        <input type="button" value="" id="a3" onclick="b3()" class="s">
+        <input type="button" value="" id="a4" onclick="b4()" class="s">
+        <input type="button" value="" id="a5" onclick="b5()" class="s">
+        <input type="button" value="" id="a6" onclick="b6()" class="s">
+        <input type="button" value="" id="a7" onclick="b7()" class="s">
+        <input type="button" value="" id="a8" onclick="b8()" class="s">
+        <input type="button" value="" id="a9" onclick="b9()" class="s">
+
+    </div>
+    <div class="whoiswinner1" id="p1"> <b> Player-1 is winner</b></div>
+    <div class="whoiswinner2" id="p2"> <b>Player-2 is winner</b> </div>
+    <div class="draw" id="p3"> <b>Draw</b> </div>
+
+    <div class="reset">
+        <input type="button" value="Reset" id="res" class="et" onclick="reset()">
+    </div>
+</body>
+
+</html>
